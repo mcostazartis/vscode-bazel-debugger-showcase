@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "name": "ts-example",
+  "engines": {
+    "yarn": ">= 1.19.0",
+    "npm": ">= 6.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@bazel/bazelisk": "^1.10.1",
+    "@bazel/buildifier": "^4.2.1",
+    "@bazel/ibazel": "^0.15.10",
+    "@bazel/typescript": "^4.1.0",
+    "@types/node": "14.17.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.27.0",
+    "eslint": "^7.28.0",
+    "eslint-plugin-unused-imports": "^1.1.1",
+    "ts-node": "7.0.0",
+    "tslib": "^1.9.0",
+    "typescript": "^4.2.4",
+    "yarn": "^1.22.0"
+  },
+  "scripts": {
+    "sample:dev": "NODE_ENV=dev bazel run //sample:bin",
+    "sample:dev:debug": "NODE_ENV=dev bazel run --config=debug //sample:bin"
+  }
+}

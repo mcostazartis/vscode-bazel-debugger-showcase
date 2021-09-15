@@ -1,0 +1,43 @@
+load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+load("@npm//@bazel/typescript:index.bzl", "ts_config", "ts_project")
+
+package(default_visibility = ["//visibility:public"])
+
+filegroup(
+    name = "app_srcs",
+    srcs = glob(
+        ["**/*.ts"],
+        exclude = ["**/*.spec.ts"],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+ts_config(
+    name = "config",
+    src = "tsconfig.json",
+    deps = [
+        "//:tsconfig.json",
+    ],
+)
+
+ts_project(
+    name = "tsconfig",
+    srcs = glob(
+        ["**/*.ts"],
+        exclude = ["**/*.spec.ts"],
+    ),
+    composite = True,
+    declaration = True,
+    extends = "//:tsconfig.json",
+    link_workspace_root = True,
+    source_map = True,
+    deps = [],
+)
+
+nodejs_binary(
+    name = "bin",
+    data = [
+        ":tsconfig",
+    ],
+    entry_point = ":main.ts",
+)

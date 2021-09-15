@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "experimentalDecorators": true,
+      "target": "ES2015",
+      "module": "commonjs",
+      "rootDirs": [
+        ".",
+        "bazel-out/k8-fastbuild/bin",
+        "bazel-out/darwin-fastbuild/bin"
+      ],
+      "declaration": true,
+      "pretty": false,
+      "sourceMap": true,
+      "allowSyntheticDefaultImports": true,
+      "noImplicitAny": false,
+      "baseUrl": "./",
+      "suppressImplicitAnyIndexErrors": true
+    },
+    "exclude": ["external"]
+  }
+  
