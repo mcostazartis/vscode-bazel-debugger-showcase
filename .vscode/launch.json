@@ -43,6 +43,7 @@
       "internalConsoleOptions": "neverOpen",
       "sourceMaps": true,
       "trace": true,
+      "resolveSourceMapLocations": null,
       "sourceMapPathOverrides": {
         "../*": "${workspaceRoot}/*",
         "../../*": "${workspaceRoot}/*",
